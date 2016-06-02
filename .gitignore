@@ -2,6 +2,11 @@
 ### Eclipse template
 node_modules/
 _build/
+_book/
+book.pdf
+book.epub
+book.html
+book.mobi
 .metadata
 bin/
 tmp/
