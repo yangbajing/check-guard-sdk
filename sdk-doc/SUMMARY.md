@@ -6,5 +6,7 @@
 * [开始开发](dev/README.md)
   * [接入指南](dev/access-guide.md)
   * [数据加解密接入](dev/encrypt.md)
+  * [加密解密技术方案](dev/encrypt-tech.md)
+  * [SDK](dev/sdk.md)
 * [WEB开发](web/README.md)
   * [网站接入](web/site.md)

@@ -22,7 +22,7 @@ https://www.bee110.com/sdk/js/sdk.js
 <button type="button" class="sc-button" data-sc-value="SageXmehKaJNL6N9ALcuVoMfMknJpfDvzWmaZp/4l/1GYRcup8YuiY57UU1lqsWr2IILN779HmjiClQdKxf5hJ9WR/CNl/qYsTEcph2Y4TTpj52oNEaEWf8R+bkKXyevE4dkL/WILoezLMF220IRMpZfDstBF+91jJmmQh63XoM=">投先查（重庆XXXXXX有限公司）</button>
 ```
 
-网站接入投先查服务的设置这些就可以了，其中`data-sc-value`是加密后的文本，需要使用`encodingAesKey`对原始消息进行加密。对消息的加密推荐使用官方提供的SDK，具体加密方式请看 [数据加解密接入](../dev/encrypt.md)。
+网站接入投先查服务的设置这些就可以了，其中`data-sc-value`是加密后的文本，需要使用`encodingAesKey`对原始消息进行加密。对消息的加密推荐使用官方提供的[SDK](../dev/sdk.md)，具体加密方式请看 [数据加解密接入](../dev/encrypt.md)。
 
 ## 参数组装与数据加密
 
