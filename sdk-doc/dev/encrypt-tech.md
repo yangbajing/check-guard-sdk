@@ -6,7 +6,7 @@
 
 投先查插件的数据加密解密技术方案采用基于AES加解密算法（<a target="_blank" href="https://zh.wikipedia.org/wiki/%E9%AB%98%E7%BA%A7%E5%8A%A0%E5%AF%86%E6%A0%87%E5%87%86">高级加密标准</a>）来实现，具体如下：
 
-1. EncodingAESKey即消息加解密Key，长度固定为43个字符，从a-z,A-Z,0-9共62个字符中选取。由开发者在创建公众号插件时填写，后也可申请修改。
+1. EncodingAESKey即消息加解密Key，长度固定为43个字符，从a-z,A-Z,0-9共62个字符中选取。
 2. AES密钥： AESKey=Base64_Decode(EncodingAESKey + “=”)，EncodingAESKey尾部填充一个字符的“=”, 用Base64_Decode生成32个字节的AESKey；
 3. AES采用CBC模式，秘钥长度为32个字节（256位），数据采用PKCS#7填充 ； PKCS#7：K为秘钥字节数（采用32），buf为待加密的内容，N为其字节数。Buf 需要被填充为K的整数倍。在buf的尾部填充(K-N%K)个字节，每个字节的内容 是(K- N%K)。
 
