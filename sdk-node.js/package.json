@@ -1,0 +1,12 @@
+{
+  "name": "check-guard-sdk-node.js",
+  "version": "0.0.1",
+  "description": "投先查 Node.js SDK",
+  "repository": {
+    "github": "https://github.com/yangbajing/check-guard-sdk/tree/master/sdk-node.js"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "crypto": "0.0.3"
+  }
+}

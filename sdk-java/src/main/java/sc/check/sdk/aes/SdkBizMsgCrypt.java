@@ -6,22 +6,7 @@
  * 针对org.apache.commons.codec.binary.Base64，
  * 需要导入架包commons-codec-1.9（或commons-codec-1.8等其他版本）
  * 官方下载地址：http://commons.apache.org/proper/commons-codec/download_codec.cgi
- * <p>
- * 针对org.apache.commons.codec.binary.Base64，
- * 需要导入架包commons-codec-1.9（或commons-codec-1.8等其他版本）
- * 官方下载地址：http://commons.apache.org/proper/commons-codec/download_codec.cgi
- * <p>
- * 针对org.apache.commons.codec.binary.Base64，
- * 需要导入架包commons-codec-1.9（或commons-codec-1.8等其他版本）
- * 官方下载地址：http://commons.apache.org/proper/commons-codec/download_codec.cgi
- * <p>
- * 针对org.apache.commons.codec.binary.Base64，
- * 需要导入架包commons-codec-1.9（或commons-codec-1.8等其他版本）
- * 官方下载地址：http://commons.apache.org/proper/commons-codec/download_codec.cgi
- * <p>
- * 针对org.apache.commons.codec.binary.Base64，
- * 需要导入架包commons-codec-1.9（或commons-codec-1.8等其他版本）
- * 官方下载地址：http://commons.apache.org/proper/commons-codec/download_codec.cgi
+ * </p>
  */
 
 // ------------------------------------------------------------------------
@@ -174,7 +159,7 @@ public class SdkBizMsgCrypt {
             throw new AesException(AesException.DecryptAESError);
         }
 
-        String xmlContent, from_apikey;
+        String content, from_apikey;
         try {
             // 去除补位字符
             byte[] bytes = PKCS7Encoder.decode(original);
@@ -182,10 +167,10 @@ public class SdkBizMsgCrypt {
             // 分离16位随机字符串,网络字节序和AppId
             byte[] networkOrder = Arrays.copyOfRange(bytes, 16, 20);
 
-            int xmlLength = recoverNetworkBytesOrder(networkOrder);
+            int contentLength = recoverNetworkBytesOrder(networkOrder);
 
-            xmlContent = new String(Arrays.copyOfRange(bytes, 20, 20 + xmlLength), CHARSET);
-            from_apikey = new String(Arrays.copyOfRange(bytes, 20 + xmlLength, bytes.length),
+            content = new String(Arrays.copyOfRange(bytes, 20, 20 + contentLength), CHARSET);
+            from_apikey = new String(Arrays.copyOfRange(bytes, 20 + contentLength, bytes.length),
                     CHARSET);
         } catch (Exception e) {
             e.printStackTrace();
@@ -196,7 +181,7 @@ public class SdkBizMsgCrypt {
         if (!from_apikey.equals(appid)) {
             throw new AesException(AesException.ValidateAppidError);
         }
-        return xmlContent;
+        return content;
 
     }
 

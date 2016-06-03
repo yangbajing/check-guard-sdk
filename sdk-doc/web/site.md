@@ -40,7 +40,7 @@ https://www.bee110.com/sdk/js/sdk.js
 ```java
 String msg = "companyName=xxxx&regNo=xxxx&personName=xxxx&idCard=xxxx&card=xxx&phone=xxxx&personName=xxxxx&phone=xxxx&card=xxxx";
 SdkBizMsgCrypt msgCrypt = new SdkBizMsgCrypt(token, encodingAesKey, appid);
-String value = msgCrypt.encryptMsg(msg);
+String encryptText = msgCrypt.encryptMsg(msg);
 ```
 
 **注意：**
@@ -51,4 +51,21 @@ String value = msgCrypt.encryptMsg(msg);
 当有多组人需要提交时，请先按序填写完一组后再填写下一组。
 
 将调用`msgCrypt.encryptMsg`生成的加密字符串填入按钮页面的`data-sc-value`属性即可。
+
+## 在线测试接口
+
+生成的加密字符串`encryptText`可以通过投先查提供的一个测试接口 `https://www.bee110.com/sdk/test/decrypt?appid=<appid>` 来验证正确性：
+
+```bash
+curl -v -XPOST -d 'SfEyVQQ3e+Y2gDJvaga9hG9eHdTLI6HWjM30u3nw5hCEaoHvy7XjbR6m0tcoeMYXjRLplGWkOGTr0gwHDo6SkoOEZDBaoyP/ZrcsvhsJLOjHu7RBKi10IKMcqe22/wAmDmliiivwtWuFXcDAYblTfsCx6rlpkjkHCFaSnMd48fw=' "https://www.bee110.com/sdk/test/decrypt?appid=t5TK63TodUpgink1yg0o"
+```
+
+当解密成功后将返回200状态码，并返回原始未密码内容：
+
+```
+< HTTP/1.1 200 OK
+< Content-Type: text/plain; charset=utf-8
+< 
+companyName=重庆XXXXXX有限公司&personName=XXX&idCard=440224XXXXXXXX28XX
+```
 
