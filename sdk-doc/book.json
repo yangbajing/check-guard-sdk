@@ -1,7 +1,9 @@
 {
   "plugins": [
     "include-codeblock",
-    "mermaid"
+    "mermaid",
+	"prism",
+	"-highlight"
   ],
   "pluginsConfig": {
     "sharing": {
