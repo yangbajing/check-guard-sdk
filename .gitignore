@@ -1,5 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
 ### Eclipse template
+sdk-java/.idea/
 node_modules/
 _build/
 _book/
@@ -10,6 +11,7 @@ book.mobi
 .metadata
 bin/
 tmp/
+*.pyc
 *.tmp
 *.bak
 *.swp
