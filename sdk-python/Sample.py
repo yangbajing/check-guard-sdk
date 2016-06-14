@@ -14,6 +14,11 @@ if __name__ == "__main__":
 
     # 测试加密接口
     sdkBizCrypt = SdkBizMsgCrypt(token, encodingAESKey, appid)
+    #----------------------------------------
+    # 所有text编码一律转换uft编码再进行系统默认编码
+    # 注:如果确定text输入不使用utf-8,可以注释掉本行
+    text = text.decode('utf-8').encode()
+    #----------------------------------------
     ret, encrypt_text = sdkBizCrypt.EncryptMsg(text)
     print ret, encrypt_text
 
