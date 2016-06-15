@@ -1,8 +1,8 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Xml;
+
 namespace MsgCryptTest
 {
     class Sample
@@ -17,19 +17,20 @@ namespace MsgCryptTest
 
             Bee110.SdkBizMsgCrypt wxcpt = new Bee110.SdkBizMsgCrypt(sToken, sEncodingAESKey, sAppID);
             
-            string sText = "companyName=xxxx&regNo=xxxx&personName=xxxx&idCard=xxxx&card=xxx&phone=xxxx&personName=xxxxx&phone=xxxx&card=xxxx";
+            string sText = "companyName=xx公司xx&regNo=xxxx&personName=xxxx&idCard=xxxx&card=xxx&phone=xxxx&personName=xxxxx&phone=xxxx&card=xxxx";
             string sEncryptMsg = ""; //加密后的密文
-            ret = wxcpt.EncryptMsg(sText, ref sEncryptMsg);
+            var ret = wxcpt.EncryptMsg(sText, ref sEncryptMsg);
             System.Console.WriteLine("sEncryptMsg");
             System.Console.WriteLine(sEncryptMsg);
 
             string sMsg = "";  //解析之后的明文
-			int ret = wxcpt.DecryptMsg(sEncryptMsg, ref sMsg);
+			ret = wxcpt.DecryptMsg(sEncryptMsg, ref sMsg);
             if (ret != 0)
             {
                 System.Console.WriteLine("ERR: Decrypt fail, ret: " + ret);
                 return;
             }
+            
             System.Console.WriteLine(sMsg);
         }
     }
