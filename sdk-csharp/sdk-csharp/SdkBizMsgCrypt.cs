@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Xml;
 using System.Collections;
 //using System.Web;
 using System.Security.Cryptography;
@@ -65,7 +64,7 @@ namespace Bee110
             string cpid = "";
             try
             {
-                sMsg = Cryptography.AES_decrypt(sEncryptMsg, m_sEncodingAESKey, ref cpid);
+                sMsg = Cryptography.AES_decrypt(sEncryptText, m_sEncodingAESKey, ref cpid);
             }
             catch (FormatException)
             {
