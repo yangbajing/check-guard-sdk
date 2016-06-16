@@ -26,19 +26,22 @@ https://www.bee110.com/sdk/js/sdk.js
 
 ## 参数组装与数据加密
 
-投先查现在提供如下参数：
+投先查现在提供两种类型的数据查询服务：
 
-- companyName: 企业名
-- regNo: 企业注册号
-- personName: 姓名
-- idCard: 身份证号
-- card: 银行卡号
-- phone: 手机号
+1. 企业查询。包含以下参数：
+    - companyName: 企业名
+    - regNo: 企业注册号
+2. 个人查询。
+    - personName: 姓名
+    - idCard: 身份证号
+    - card: 银行卡号
+    - phone: 手机号
 
 开发者需要按一定顺序拼接参数，示例如下：
 
 ```java
-String msg = "companyName=xxxx&regNo=xxxx&personName=xxxx&idCard=xxxx&card=xxx&phone=xxxx&personName=xxxxx&phone=xxxx&card=xxxx";
+// String msg = "companyName=xxxx&regNo=xxxx" // 企业查询参数拼接
+String msg = "personName=xxxx&idCard=xxxx&card=xxx&phone=xxxx&personName=xxxxx&phone=xxxx&card=xxxx";
 SdkBizMsgCrypt msgCrypt = new SdkBizMsgCrypt(token, encodingAesKey, appid);
 String encryptText = msgCrypt.encryptMsg(msg);
 ```

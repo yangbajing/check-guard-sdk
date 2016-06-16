@@ -149,3 +149,4 @@ fabric.properties
 将删除 sdk-csharp/sdk-csharp/Properties/
 将删除 sdk-csharp/sdk-csharp/sdk-csharp.csproj
 /sdk-node.js/node_modules/
+/sdk-doc/node_modules/
