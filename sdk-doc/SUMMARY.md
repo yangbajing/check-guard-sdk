@@ -9,4 +9,5 @@
   * [加密解密技术方案](dev/encrypt-tech.md)
   * [SDK](dev/sdk.md)
 * [WEB开发](web/README.md)
-  * [网站接入](web/site.md)
+  * [方式一：网站接入](web/site.md)
+  <!--* [方式二：应用接入](web/app.md)-->

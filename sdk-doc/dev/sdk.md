@@ -18,4 +18,4 @@
 
 ## Node.js SDK
 
-源码地址：<a target="_blank" href="https://github.com/yangbajing/check-guard-sdk/tree/master/sdk-node.js">C# SDK</a>
+源码地址：<a target="_blank" href="https://github.com/yangbajing/check-guard-sdk/tree/master/sdk-node.js">Node.js SDK</a>

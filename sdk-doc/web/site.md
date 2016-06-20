@@ -1,12 +1,6 @@
-# 网站接入
+# 网站接入（方式一）
 
-## 网页设置
-
-P2P网络平台接入投先查服务，需要引入JS SDK。JS SDK地址：
-
-```
-https://www.bee110.com/sdk/js/sdk.js
-```
+P2P网络平台接入投先查服务，需要引入JS SDK。JS SDK地址：`https://www.bee110.com/sdk/js/sdk.js`。
 
 引入JS SDK需要在使用投先查功能插件的网页上引入（投先查JS SDK支持https）。示例代码如下：
 
@@ -22,7 +16,9 @@ https://www.bee110.com/sdk/js/sdk.js
 <button type="button" class="sc-button" data-sc-value="SageXmehKaJNL6N9ALcuVoMfMknJpfDvzWmaZp/4l/1GYRcup8YuiY57UU1lqsWr2IILN779HmjiClQdKxf5hJ9WR/CNl/qYsTEcph2Y4TTpj52oNEaEWf8R+bkKXyevE4dkL/WILoezLMF220IRMpZfDstBF+91jJmmQh63XoM=">投先查（重庆XXXXXX有限公司）</button>
 ```
 
-网站接入投先查服务的设置这些就可以了，其中`data-sc-value`是加密后的文本，需要使用`encodingAesKey`对原始消息进行加密。对消息的加密推荐使用官方提供的[SDK](../dev/sdk.md)，具体加密方式请看 [数据加解密接入](../dev/encrypt.md)。
+`.sc-button` 属性用于告诉投先查SDK需要判断哪些**button**（或**a**）是进入投先查的按钮。换句话说，只有设置了`.sc-button`属性的按钮或链接会被投先查JS SDK判断。
+
+其中`data-sc-value`是加密后的文本，需要使用`encodingAesKey`对原始消息进行加密。对消息的加密推荐使用官方提供的[SDK](../dev/sdk.md)，具体加密方式请看 [数据加解密接入](../dev/encrypt.md)。
 
 ## 参数组装与数据加密
 
@@ -48,14 +44,15 @@ String encryptText = msgCrypt.encryptMsg(msg);
 
 **注意：**
 
-`companyName`和`regNo`只能传一个，可以选择不传或只传其中一个参数。
+> 企业套餐：`companyName`和`regNo`只能传一组，可以选择不传或只传其中一个参数。
+>
+> 个人套餐：`personName`、`idCard`、`card`、`phone`，`personName`为必传参数。当有多组人需要提交时，请先按序填写完一组后再填写下一组。
+>
+> 将调用`msgCrypt.encryptMsg`生成的加密字符串填入按钮的的`data-sc-value`属性即可。
 
-`personName`、`idCard`、`card`、`phone`，四个参数均可以不传。但若传，则`personName`必须存在！
-当有多组人需要提交时，请先按序填写完一组后再填写下一组。
+## 其它
 
-将调用`msgCrypt.encryptMsg`生成的加密字符串填入按钮页面的`data-sc-value`属性即可。
-
-## 在线测试接口
+### 加密功能在线测试接口
 
 生成的加密字符串`encryptText`可以通过投先查提供的一个测试接口 `https://www.bee110.com/sdk/test/decrypt?appid=<appid>` 来验证正确性：
 
