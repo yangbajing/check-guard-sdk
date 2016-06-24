@@ -7,6 +7,10 @@
  * 需要导入架包commons-codec-1.9（或commons-codec-1.8等其他版本）
  * 官方下载地址：http://commons.apache.org/proper/commons-codec/download_codec.cgi
  * </p>
+ * <p>
+ * 针对org.apache.commons.codec.binary.Base64，
+ * 需要导入架包commons-codec-1.9（或commons-codec-1.8等其他版本）
+ * 官方下载地址：http://commons.apache.org/proper/commons-codec/download_codec.cgi
  */
 
 // ------------------------------------------------------------------------
@@ -89,6 +93,18 @@ public class SdkBizMsgCrypt {
     /**
      * 对明文进行加密.
      *
+     * @param text 需要加密的明文
+     * @return 加密后base64编码的字符串
+     * @throws AesException aes加密失败
+     */
+    public String encryptMsg(String text) throws AesException {
+        return encryptMsg(SdkUtils.getRandomStr(), text);
+    }
+
+    /**
+     * 对明文进行加密.
+     *
+     * @param randomStr 16位字符随机字符串
      * @param text 需要加密的明文
      * @return 加密后base64编码的字符串
      * @throws AesException aes加密失败

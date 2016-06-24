@@ -69,3 +69,7 @@ curl -v -XPOST -d 'SfEyVQQ3e+Y2gDJvaga9hG9eHdTLI6HWjM30u3nw5hCEaoHvy7XjbR6m0tcoe
 companyName=重庆XXXXXX有限公司&personName=XXX&idCard=440224XXXXXXXX28XX
 ```
 
+## 在线示例
+
+- 企业套餐示例：<a target="_blank" href="http://www.bee110.com/example/%E4%BC%81%E4%B8%9A%E7%89%88%E7%A4%BA%E4%BE%8B.html">http://www.bee110.com/example/企业版示例.html</a>
+- 个人套餐示例：<a target="_blank" href="http://www.bee110.com/example/%E4%B8%AA%E4%BA%BA%E7%89%88%E7%A4%BA%E4%BE%8B.html">http://www.bee110.com/example/个人版示例.html</a>

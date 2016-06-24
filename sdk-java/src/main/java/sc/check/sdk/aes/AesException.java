@@ -27,7 +27,7 @@ public class AesException extends Exception {
 		case ComputeSignatureError:
 			return "sha加密生成签名失败";
 		case IllegalAesKey:
-			return "SymmetricKey非法";
+			return "AesKey非法，需要43位长字符串";
 		case ValidateAppidError:
 			return "appid校验失败";
 		case EncryptAESError:
