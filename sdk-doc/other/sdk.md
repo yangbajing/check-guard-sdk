@@ -2,7 +2,8 @@
 
 ## Java SDK
 
-下载地址：<a target="_blank" href="https://github.com/yangbajing/check-guard-sdk/releases/tag/sdk-java-1.0.1">sdk-java-1.0.1</a>
+下载地址：<a target="_blank" href="https://github.com/yangbajing/check-guard-sdk/releases/tag/sdk-java-1.0.2">sdk-java-1.0.2</a>，
+源码：<a target="_blank" href="https://github.com/yangbajing/check-guard-sdk/tree/master/sdk-java">Java SDK</a>
 
 ## PHP SDK
 
