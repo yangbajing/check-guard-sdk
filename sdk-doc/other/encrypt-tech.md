@@ -60,5 +60,17 @@ String encryptMsg = "WjnWgKJ5uZ6cK1km+Acm8pWB2LL20s1R8vxpKwUkWCYmUPCMBnZeKgVd/fO
 
 1. java要求jdk 1.6以上
 
-2. 异常java.security.InvalidKeyException:illegal Key Size的解决方案：在官方网站下载JCE无限制权限策略文件（<a target="_blank" href="http://www.oracle.com/technetwork/java/javase/downloads/jce-7-download-432124.html">JDK7的下载地址</a>）
+2. 缺少`commons-codec`错误，需要添加依赖 <a target="_blank" href="https://commons.apache.org/proper/commons-codec/">common-codec</a>：
+
+```xml
+    <dependency>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+      <version>1.10</version>
+    </dependency>
+```
+ 
+![error_commons-codec](_partials/img/error_commons-codec.jpg)
+
+3. 异常java.security.InvalidKeyException:illegal Key Size的解决方案：在官方网站下载JCE无限制权限策略文件（<a target="_blank" href="http://www.oracle.com/technetwork/java/javase/downloads/jce-7-download-432124.html">JDK7的下载地址</a>）
     下载后解压，可以看到local_policy.jar和US_export_policy.jar以及readme.txt，如果安装了JRE，将两个jar文件放到%JRE_HOME%\lib\security目录下覆盖原来的文件；如果安装了JDK，将两个jar文件放到%JDK_HOME%\jre\lib\security目录下覆盖原来文件
